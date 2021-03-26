@@ -5,7 +5,7 @@ import Undead from '../undead';
 import Character from '../character';
 
 test('testing class Team', () => {
-  const expected = [
+  const expected = new Set([
     {
       name: 'Andrei',
       type: 'Bowman',
@@ -14,11 +14,11 @@ test('testing class Team', () => {
       attack: 25,
       defence: 25,
     },
-  ];
+  ]);
   const team = new Team();
   const bowman = new Bowerman('Andrei');
   team.add(bowman);
-  expect([...team.members]).toEqual(expected);
+  expect(team.members).toEqual(expected);
 });
 
 test('testing class Team', () => {
